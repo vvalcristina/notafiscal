@@ -6,7 +6,7 @@ from projeto.empresa.models import Empresa
 class NotaFiscal(TimeStampedModels):
     empresa = models.CharField(max_length=80, null= True, blank =True, unique=True)
     serie =models.CharField(max_length=50, null= True, blank= True)
-    numero =models.DecimalField(max_digits=8, decimal_places=4, null=False, blank=False)
+    numero =models.IntegerField(default=0)
     descricao =models.CharField(max_length=300)
     peso =models.DecimalField(max_digits=8,decimal_places=2, null=False, blank=False)
     cubagem = models.DecimalField(max_digits=8,decimal_places=2)
