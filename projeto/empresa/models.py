@@ -1,8 +1,8 @@
 from django.db import models
 
 class Empresa(models.Model):
-    nome = models.CharField(max_length=100)
-    cnpj = models.CharField(max_length=80, null= False)
+    nome = models.CharField(max_length=100, null=True, unique = True)
+    cnpj = models.CharField(max_length=80, null= True)
 
     class Meta:
         ordering = ('nome',)

@@ -4,7 +4,7 @@ from projeto.core.models import TimeStampedModels
 from projeto.empresa.models import Empresa
 
 class NotaFiscal(TimeStampedModels):
-    empresa = models.CharField(max_length=80, null= True, blank =True, unique=True)
+    empresa = models.CharField(max_length=80, null= True, blank =True)
     serie =models.CharField(max_length=50, null= True, blank= True)
     numero =models.IntegerField(default=0)
     descricao =models.CharField(max_length=300)
