@@ -31,3 +31,7 @@ O nome de cada empresa pode ser gerado com um lorem ipsum e os dados das notas f
 - A listagem de notas fiscais deve ser feita em uma tabela (HTML)
 
 [decouple]https://github.com/henriquebastos/python-decouple
+
+[Template Base]https://getbootstrap.com/docs/4.0/getting-started/introduction/#starter-template
+
+[Template Nav]https://github.com/JTruax/bootstrap-starter-template/blob/master/template/start.html
