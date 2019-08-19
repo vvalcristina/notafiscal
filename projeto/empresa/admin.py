@@ -5,7 +5,7 @@ from .models import Empresa
 class EmpresaAdmin(admin.ModelAdmin):
     list_display = (
         '__str__',
+        'nome',
         'cnpj',
         )
-    search_fields=('cnpj',)
-    list_filter=('nome',)
+    search_fields=('nome',)

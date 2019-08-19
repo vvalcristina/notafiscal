@@ -6,7 +6,7 @@ django.setup()
 
 import string
 import timeit
-from random import choice, random, randint
+from random import choice, random
 from projeto.empresa.models import Empresa
 
 class Utils:
@@ -34,9 +34,12 @@ nomes=(
         'Empresa 2',
         'Empresa 3',
         'Empresa 4',
-        'EMpresa 5',
-        'EMpresa 6',
-        'EMpresa 7',
+        'Empresa 5',
+        'Empresa 6',
+        'Empresa 7',
+        'Empresa 8',
+        'Empresa 9',
+        'Empresa 10',
 )
 
 tic = timeit.default_timer()
