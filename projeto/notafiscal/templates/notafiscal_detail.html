@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+  <a href="{% url 'notafiscal:notafiscal_list' %}">Voltar</a>
+  <h1>{{ object }}</h1>
+
+  <div class="col-sm-6">
+    <table class="table table-user-information">
+      <tbody>
+        <tr>
+          <th class="text-right">Empresa</th>
+          <td>{{ object.empresa}}</td>
+        </tr>
+        <tr>
+          <th class="text-right">Descrição/Nome</th>
+          <td>{{ object.descricao}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>Empresa</td>
+        <td>Série</td>
+        <td>Número</td>
+        <td>Descrição/Nome</td>
+        <td>Peso(Kg)</td>
+        <td>Cubagem(m³)</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for obj in object.empresa.all %}
+        <tr>
+          <td>{{ obj.empresa }}</td>
+          <td>{{ obj.serie }}</td>
+          <td>{{ obj.numero }}</td>
+          <td>{{obj.descricao}}</td>
+          <td>{{obj.peso}}</td>
+          <td>{{obj.cubagem}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+{% endblock content %}

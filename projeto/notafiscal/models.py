@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse_lazy
 from projeto.core.models import TimeStampedModels
 from projeto.empresa.models import Empresa
+
 
 class NotaFiscal(models.Model):
     empresa = models.CharField(max_length=80, null= True, blank =True)
@@ -12,7 +14,10 @@ class NotaFiscal(models.Model):
     cubagem = models.DecimalField(max_digits=8,decimal_places=2)
 
     class Meta:
-        ordering =('empresa',)
+        ordering =('pk',)
 
     def __str__(self):
         return self.empresa
+
+    def get_absolute_url(self):
+        return reverse_lazy('notafiscal:notafiscal_detail', kwargs={'pk': self.pk})

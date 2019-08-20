@@ -25,7 +25,7 @@
       {% for object in object_list %}
         <tr>
           <td>
-            <a href="">{{ object }}</a>
+            <a href="{{ object.get_absolute_url}}">{{ object }}</a>
           </td>
           <td>{{ object.serie }}</td>
           <td>{{ object.numero }}</td>
@@ -37,6 +37,6 @@
     </tbody>
   </table>
 {% else %}
-  <p class="alert alert-warning">Sem itens na lista</p>
+  <p class="alert alert-warning">Não existem notas fiscais nesta lista</p>
 {% endif %}
 {% endblock content %}
