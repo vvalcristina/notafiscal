@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Lista de Notas Fiscais
+  <span class="pull-righ">
+    <a href="">
+      <button type="buton" class="btn btn-primary">
+        <span class="fa fa-plus"></span>Adicionar
+      </button>
+    </a>
+  </span>
+</h2>
+{% if object_list %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Empresa</th>
+        <th>Série</th>
+        <th>Número</th>
+        <th>Descrição/Nome</th>
+        <th>Peso(kg)</th>
+        <th>Cubagem(m³)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for object in object_list %}
+        <tr>
+          <td>
+            <a href="">{{ object }}</a>
+          </td>
+          <td>{{ object.serie }}</td>
+          <td>{{ object.numero }}</td>
+          <td>{{ object.descricao }}</td>
+          <td>{{ object.peso }}</td>
+          <td>{{ object.cubagem }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p class="alert alert-warning">Sem itens na lista</p>
+{% endif %}
+{% endblock content %}

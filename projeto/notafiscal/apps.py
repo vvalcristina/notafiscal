@@ -1,5 +1,4 @@
 from django.apps import AppConfig
 
-
-class NotafiscalConfig(AppConfig):
+class NotaFiscalConfig(AppConfig):
     name = 'notafiscal'

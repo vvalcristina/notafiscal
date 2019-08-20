@@ -4,15 +4,16 @@ from .models import NotaFiscal
 
 @admin.register(NotaFiscal)
 class NotaFiscalAdmin(admin.ModelAdmin):
-    list_display = ('__str__',
+    list_display = (
+            '__str__',
             'empresa',
             'serie',
             'numero',
             'descricao',
             'peso',
-            'cubagem'
+            'cubagem',
     )
     search_fields =('empresa',)
-    list_filter =('numero', 'descricao',)
-    date_hierarchy= 'created'
+    #list_filter =('numero', 'descricao',)
+
 # Register your models here.
