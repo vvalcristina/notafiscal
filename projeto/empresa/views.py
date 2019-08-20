@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from .models import Empresa
 from .forms import EmpresaForm
 
@@ -20,6 +20,13 @@ def empresa_add(request):
     return render(request,template_name)
 
 class EmpresaCreate(CreateView):
+    #Criar empresa
+    model = Empresa
+    template_name='empresa_form.html'
+    form_class=EmpresaForm
+
+class EmpresaUpdate(UpdateView):
+    #Editar empresa
     model = Empresa
     template_name='empresa_form.html'
     form_class=EmpresaForm

@@ -1,22 +1,20 @@
 {% extends "base.html" %}
 {% load widget_tweaks %}
-
 {% block css %}
   <style>
-    span.required.after{
-      content:"*";
-      color: read;
+    span.required:after{
+      content:" *";
+      color: red;
     }
-
   </style>
 {% endblock css %}
 
 {% block content %}
 
-<form method="post" novalidate>
+<form method="POST" novalidate>
 <!--  #Para validar o post dos dados  {% csrf_token %}-->
   {% csrf_token %}
-  {% for fiel in form.visible_fields %}
+  {% for field in form.visible_fields %}
     <div class="form-group{% if field.errors %} has-error {% endif %}">
       <label for="{{ field.id_for_label }}">
         {% if field.field.required %}
@@ -33,5 +31,4 @@
   {% endfor %}
     <button type="submit" class="btn btn-sucess">Cadastrar</button>
 </form>
-
 {% endblock content %}
