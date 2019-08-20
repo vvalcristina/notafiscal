@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{% url 'empresa:empresa_list' %}">Voltar</a>
+
+<h1>{{object}}
+  <span class="pull-right">
+    <a href="">
+      <button type="button" class="btn btn-success">
+        <span class="fa fa-pencil"></span>Editar
+      </button>
+    </a>
+  </span>
+</h1>
+
+<div class="col-sm-6">
+  <table class="table table-user-information">
+    <tbody>
+      <tr>
+        <th class="text-right">Nome da Empresa</th>
+        <td>{{object.nome}}</td>
+      </tr>
+      <tr>
+        <th class="text-right">CNPJ</th>
+        <td>{{object.cnpj}}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
+{% endblock content %}
