@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import CreateView
 from .models import Empresa
+from .forms import EmpresaForm
 
 def empresa_list(request):
     template_name ='empresa_list.html'
@@ -12,7 +14,12 @@ def empresa_detail(request, pk):
     obj = Empresa.objects.get(pk=pk)
     context ={'object' : obj}
     return render(request, template_name,context)
-# Create your views here.
 
+def empresa_add(request):
+    template_name='empresa_form.html'
+    return render(request,template_name)
 
-# Create your views here.
+class EmpresaCreate(CreateView):
+    model = Empresa
+    template_name='empresa_form.html'
+    form_class=EmpresaForm

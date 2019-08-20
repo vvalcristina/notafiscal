@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Aplicações da internet(vide README.md)
+    'widget_tweaks',
     #Minhas aplicações
     'projeto.core',
     'projeto.empresa',

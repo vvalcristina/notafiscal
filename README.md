@@ -35,3 +35,9 @@ O nome de cada empresa pode ser gerado com um lorem ipsum e os dados das notas f
 [Template Base]https://getbootstrap.com/docs/4.0/getting-started/introduction/#starter-template
 
 [Template Nav]https://github.com/JTruax/bootstrap-starter-template/blob/master/template/start.html
+
+[Django widget_tweaks] https://github.com/jazzband/django-widget-tweaks
+
+[Class Based Views-> Formato de visualização do projeto ]
+https://docs.djangoproject.com/en/2.2/topics/class-based-views/intro/
+https://ccbv.co.uk/

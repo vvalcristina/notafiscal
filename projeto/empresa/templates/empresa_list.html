@@ -3,7 +3,15 @@
 {% block content %}
 
 <div class="page-header">
-  <h2><i class="fa fa-user"></i>  Lista de Empresas Cadastradas</h2>
+  <h2>Lista de Empresas
+    <span class="pull-righ">
+      <a href="{% url 'empresa:empresa_add'%}">
+        <button type="buton" class="btn btn-primary">
+          <span class="fa fa-plus"></span>Adicionar
+        </button>
+      </a>
+    </span>
+  </h2>
   {% if object_list %}
     <table class="table table-striped">
       <thead>
