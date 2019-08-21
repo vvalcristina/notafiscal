@@ -1,4 +1,24 @@
 # notafiscal
+
+##Como rodar esse projeto?
+* Clone esse repositório
+* Crie um virtualenv com Python 3
+* Ative o virtualenv.
+* Instale as dependências.
+* Rode as migrações
+
+## Instruções:
+git clone https://github.com/vvalcristina/notafiscal.git
+cd notafiscal
+python -m venv .venv
+source .venv\Scripts\activate
+pip install requirements.txt
+python contrib/env_gen.py
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+
+##Projeto:
 Crie um projeto Django para gerenciar notas fiscais.
 
 Os campos das notas são:  
@@ -20,23 +40,20 @@ Crie uma página para exibir a listagem de empresas.
 Ao abrir os detalhes da empresa deve ser aberta a listagem de notas fiscais daquela empresa.  
 Adicione à listagem de notas fiscais um campo de busca por número ou nome do produto.
 A busca deve funcionar via GET.
-Paginação é bem vinda, mas não necessária para o teste.
-Você pode usar qualquer formato de Django views para este teste (CBV ou FBV)  
 
-Para a apresentação cadastre ao menos 10 empresas com 20 notas fiscais cada uma.
-O nome de cada empresa pode ser gerado com um lorem ipsum e os dados das notas fiscais podem ser randomicos, porém válidos.
-- Inclua o script de geração das empresas no anexo do projeto
-- Utilize arquivos externos para os dados de entrada
-- Inclua um CSS à página para uma aparência agradável (pode ser Bootstrap)
-- A listagem de notas fiscais deve ser feita em uma tabela (HTML)
+##Links:
 
-[decouple]https://github.com/henriquebastos/python-decouple
+[decouple
+]https://github.com/henriquebastos/python-decouple
 
-[Template Base]https://getbootstrap.com/docs/4.0/getting-started/introduction/#starter-template
+[Template Base]
+https://getbootstrap.com/docs/4.0/getting-started/introduction/#starter-template
 
-[Template Nav]https://github.com/JTruax/bootstrap-starter-template/blob/master/template/start.html
+[Template Nav]
+https://github.com/JTruax/bootstrap-starter-template/blob/master/template/start.html
 
-[Django widget_tweaks] https://github.com/jazzband/django-widget-tweaks
+[Django widget_tweaks]
+https://github.com/jazzband/django-widget-tweaks
 
 [Class Based Views-> Formato de visualização do projeto ]
 https://docs.djangoproject.com/en/2.2/topics/class-based-views/intro/
