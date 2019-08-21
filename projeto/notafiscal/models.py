@@ -5,7 +5,7 @@ from projeto.core.models import TimeStampedModels
 from projeto.empresa.models import Empresa
 
 
-class NotaFiscal(models.Model):
+class NotaFiscal(TimeStampedModels):
     empresa = models.CharField(max_length=80, null= True, blank =True)
     serie =models.CharField(max_length=50, null= True, blank= True)
     numero =models.IntegerField(default=0)
@@ -14,10 +14,20 @@ class NotaFiscal(models.Model):
     cubagem = models.DecimalField(max_digits=8,decimal_places=2)
 
     class Meta:
-        ordering =('pk',)
+        ordering =('-created',)
 
     def __str__(self):
-        return self.empresa
+        return '{}-{}'.format(self.pk, self.empresa)
 
     def get_absolute_url(self):
         return reverse_lazy('notafiscal:notafiscal_detail', kwargs={'pk': self.pk})
+
+class NotaFiscalItens(models.Model):
+    notafiscal=models.ForeignKey(NotaFiscal,on_delete=models.CASCADE, related_name='notasfiscais')
+    empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering= ('pk',)
+
+    def __str__(self):
+        return '{} - {} - {}'.format(self.pk, self.notafiscal.pk, self.empresa)

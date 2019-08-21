@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Aplicações da internet(vide README.md)
     'widget_tweaks',
+    'bootstrapform',
     #Minhas aplicações
     'projeto.core',
     'projeto.empresa',

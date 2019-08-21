@@ -41,3 +41,6 @@ O nome de cada empresa pode ser gerado com um lorem ipsum e os dados das notas f
 [Class Based Views-> Formato de visualização do projeto ]
 https://docs.djangoproject.com/en/2.2/topics/class-based-views/intro/
 https://ccbv.co.uk/
+
+[Django Bootstrap Form]
+https://django-bootstrap-form.readthedocs.io/en/latest/

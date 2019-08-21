@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse_lazy
 
 class Empresa(models.Model):
-    nome = models.CharField('nome',max_length=100, )
+    nome = models.CharField('nome',max_length=100, unique= True )
     cnpj = models.CharField('cnpj',max_length=14, unique=True)
 
     class Meta:

@@ -6,4 +6,5 @@ app_name = 'notafiscal'
 urlpatterns = [
     path('',v.notafiscal_list, name ='notafiscal_list'),
     path('<int:pk>/',v.notafiscal_detail, name ='notafiscal_detail'),
+    path('add/',v.notafiscal_add, name ='notafiscal_add'),
 ]

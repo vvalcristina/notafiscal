@@ -11,36 +11,52 @@
           <td>{{ object.empresa}}</td>
         </tr>
         <tr>
+          <th class="text-right">Série</th>
+          <td>{{ object.serie}}</td>
+        </tr>
+        <tr>
+          <th class="text-right">Número</th>
+          <td>{{ object.numero}}</td>
+        </tr>
+        <tr>
           <th class="text-right">Descrição/Nome</th>
           <td>{{ object.descricao}}</td>
+        </tr>
+        <tr>
+          <th class="text-right">Peso(Kg)</th>
+          <td>{{ object.peso}}</td>
+        </tr>
+        <tr>
+          <th class="text-right">Cubagem(m³)</th>
+          <td>{{ object.cubagem}}</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <table class="table table-striped">
-    <thead>
+  <thead>
+    <tr>
+      <th>Empresa</th>
+      <th>Número</th>
+      <th>Descrição/Nome:</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for obj in object.notafiscal_detail.all %}
       <tr>
-        <td>Empresa</td>
-        <td>Série</td>
-        <td>Número</td>
-        <td>Descrição/Nome</td>
-        <td>Peso(Kg)</td>
-        <td>Cubagem(m³)</td>
+        <td>{{ obj.empresa }}</td>
+        <td>{{ obj.numero }}</td>
+        <td>{{ obj.descricao }}</td>
       </tr>
-    </thead>
-    <tbody>
-      {% for obj in object.empresa.all %}
-        <tr>
-          <td>{{ obj.empresa }}</td>
-          <td>{{ obj.serie }}</td>
-          <td>{{ obj.numero }}</td>
-          <td>{{obj.descricao}}</td>
-          <td>{{obj.peso}}</td>
-          <td>{{obj.cubagem}}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
+    {% endfor %}
+  </tbody>
+</table>
 
-  </table>
+
+
+
+
+
+
 {% endblock content %}
