@@ -1,8 +1,7 @@
-from django.forms import inlineformset_factory
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, resolve_url
-from .models import NotaFiscal,NotaFiscalItens
-from .forms import NotaFiscalForm, NotaFiscalItensForm
+from django.shortcuts import render
+from django.views.generic import CreateView, UpdateView
+from .models import NotaFiscal
+from .forms import NotaFiscalForm
 
 def notafiscal_list(request):
     template_name='notafiscal_list.html'
@@ -10,38 +9,25 @@ def notafiscal_list(request):
     context ={'object_list': objects}
     return render(request, template_name, context)
 
-def notafiscal_detail(request,pk):
+def notafiscal_detail(request, pk):
     template_name='notafiscal_detail.html'
-    obj=NotaFiscal.objects.get(pk=pk)
+    obj= NotaFiscal.objects.get(pk=pk)
     context ={'object': obj}
     return render(request, template_name, context)
 
 def notafiscal_add(request):
     template_name='notafiscal_form.html'
     notafiscal_form=NotaFiscal()
-    item_notafiscal_formset= inlineformset_factory(
-        NotaFiscal,
-        NotaFiscalItens,
-        form= NotaFiscalItensForm,
-        extra=0,
-        min_num=1,
-        validate_min=True,
-    )
-    if request.method == 'POST':
-        form= NotaFiscalForm(request.POST, instance=notafiscal_form, prefix='main')
-        formset=item_notafiscal_formset(
-            request.POST,
-            instance=notafiscal_form,
-            prefix='notafiscal',
-        )
-        if form.is_valid() and formset.is_valid():
-            form.save()
-            formset.save()
-            url='notafiscal:notafiscal_detail'
-            return HttpResponseRedirect(resolve_url(url, form.pk))
-    else:
-        form=NotaFiscalForm(instance=notafiscal_form, prefix='main')
-        formset=item_notafiscal_formset(instance=notafiscal_form, prefix='notafiscal')
+    return render(request, template_name)
 
-    context = {'form':form, 'formset':formset}
-    return render(request, template_name, context)
+class NotaFiscalCreate(CreateView):
+    #Criar Nota Fiscal
+    model= NotaFiscal
+    template_name='notafiscal_form.html'
+    form_class=NotaFiscalForm
+
+class NotaFiscalUpdate(UpdateView):
+    #Editar a Nota Fiscal
+    model= NotaFiscal
+    template_name= 'notafiscal_form.html'
+    form_class=NotaFiscalForm

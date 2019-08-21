@@ -1,7 +1,17 @@
 {% extends "base.html" %}
+
 {% block content %}
   <a href="{% url 'notafiscal:notafiscal_list' %}">Voltar</a>
-  <h1>{{ object }}</h1>
+
+  <h1>{{ object }}
+    <span class="pull-right">
+      <a href="{% url 'notafiscal:notafiscal_edit' object.pk %}">
+        <button type="button" class="btn btn-sucess">
+          <span class="fa fa-pencil"></span>Editar
+        </button>
+      </a>
+    </span>
+  </h1>
 
   <div class="col-sm-6">
     <table class="table table-user-information">
@@ -33,30 +43,4 @@
       </tbody>
     </table>
   </div>
-
-  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Empresa</th>
-      <th>Número</th>
-      <th>Descrição/Nome:</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for obj in object.notafiscal_detail.all %}
-      <tr>
-        <td>{{ obj.empresa }}</td>
-        <td>{{ obj.numero }}</td>
-        <td>{{ obj.descricao }}</td>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
-
-
-
-
-
-
-
 {% endblock content %}

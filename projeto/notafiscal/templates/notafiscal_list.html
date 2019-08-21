@@ -25,7 +25,7 @@
       {% for object in object_list %}
         <tr>
           <td>
-            <a href="{{ object.get_absolute_url}}">{{ object }}</a>
+            <a href="{% url 'notafiscal:notafiscal_detail' object.pk %}">{{ object.empresa }}</a>
           </td>
           <td>{{ object.serie }}</td>
           <td>{{ object.numero }}</td>
