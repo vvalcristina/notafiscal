@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, ListView
 from .models import NotaFiscal
 from .forms import NotaFiscalForm
 from django.db.models import Q
@@ -13,6 +13,13 @@ def notafiscal_list(request):
         objects = objects.filter(Q(descricao__icontains=search) | Q(numero__icontains=search))
     context ={'object_list': objects}
     return render(request, template_name, context)
+
+class NotaFiscalList(ListView):
+    #Paginação das NotasFiscais
+    model = NotaFiscal
+    template_name = 'notafiscal_list.html'
+    paginate_by = 5 #Numero de itens por pagina
+
 
 def notafiscal_detail(request, pk):
     template_name='notafiscal_detail.html'

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, ListView
 from .models import Empresa
 from .forms import EmpresaForm
 
@@ -8,6 +8,12 @@ def empresa_list(request):
     objects = Empresa.objects.all()
     context ={'object_list' : objects}
     return render(request, template_name,context)
+
+class EmpresaList(ListView):
+    #Paginação das Empresas
+    model = Empresa
+    template_name = 'empresa_list.html'
+    paginate_by = 5
 
 def empresa_detail(request, pk):
     template_name ='empresa_detail.html'

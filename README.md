@@ -61,3 +61,6 @@ https://ccbv.co.uk/
 
 [Django Bootstrap Form]
 https://django-bootstrap-form.readthedocs.io/en/latest/
+
+[Paginação]
+https://getbootstrap.com.br/docs/4.1/components/pagination/
