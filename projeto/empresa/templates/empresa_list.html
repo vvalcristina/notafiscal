@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-<div class="page-header">
+<div class="col-sm-10" style= "margin-top: 30px;">
   <h2>Lista de Empresas
     <span class="pull-righ">
       <a href="{% url 'empresa:empresa_add'%}">
@@ -13,8 +13,8 @@
     </span>
   </h2>
   {% if object_list %}
-    <table class="table table-borded">
-      <thead>
+    <table class="table table-striped" style="width: 1350px; margin: 0 auto;">
+      <thead class="dark">
         <tr>
           <th scope="col">Empresa</th>
           <th scope="col">CNPJ</th>
