@@ -6,7 +6,7 @@
   <h1>{{ object }}
     <span class="pull-right">
       <a href="{% url 'notafiscal:notafiscal_edit' object.pk %}">
-        <button type="button" class="btn btn-sucess">
+        <button type="button" class="btn btn-primary">
           <span class="fa fa-pencil"></span>Editar
         </button>
       </a>
@@ -14,30 +14,30 @@
   </h1>
 
   <div class="col-sm-6">
-    <table class="table table-user-information">
+    <table class="table table-bordered">
       <tbody>
         <tr>
-          <th class="text-right">Empresa</th>
+          <th scope="col">Empresa</th>
           <td>{{ object.empresa}}</td>
         </tr>
         <tr>
-          <th class="text-right">Série</th>
-          <td>{{ object.serie}}</td>
-        </tr>
-        <tr>
-          <th class="text-right">Número</th>
+          <th scope="col">Número</th>
           <td>{{ object.numero}}</td>
         </tr>
         <tr>
-          <th class="text-right">Descrição/Nome</th>
+          <th scope="col">Série</th>
+          <td>{{ object.serie}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Descrição/Nome</th>
           <td>{{ object.descricao}}</td>
         </tr>
         <tr>
-          <th class="text-right">Peso(Kg)</th>
+          <th scope="col">Peso(Kg)</th>
           <td>{{ object.peso}}</td>
         </tr>
         <tr>
-          <th class="text-right">Cubagem(m³)</th>
+          <th scope="col">Cubagem(m³)</th>
           <td>{{ object.cubagem}}</td>
         </tr>
       </tbody>

@@ -1,16 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
 {% load widget_tweaks %}
-{% block css %}
-  <style>
-    span.required:after{
-      content:"*";
-      color: red;
-    }
-  </style>
-{% endblock css %}
+
 
 {% block content %}
-<form method="POST" novalidate>
+<form class="form-horizontal" style="width: 400px; margin: 0 auto;" method="POST" novalidate>
   <!-- Para validar a criação de notas fiscais csrf_token -->
   {% csrf_token %}
   {% for field in form.visible_fields %}
@@ -28,6 +22,6 @@
         {% endfor %}
     </div>
   {% endfor %}
-  <button type="submit"class="btn btn-sucess"> Cadastro </button>
+  <button type="submit"class="btn btn-sucess"> Cadastrar </button>
 </form>
 {% endblock content %}

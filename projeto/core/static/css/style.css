@@ -1,0 +1,9 @@
+/*Espaço entre menu e titulo da pagina*/
+body {
+  margin-top: 60px;
+}
+/*Campos obrigatórios */
+span.required:after {
+  content: " *";
+  color: red;
+}

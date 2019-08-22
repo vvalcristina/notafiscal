@@ -4,14 +4,14 @@ from django.urls import reverse_lazy
 
 from projeto.empresa.models import Empresa
 
-
+#Modelo de cadastro de notas fiscais
 class NotaFiscal(models.Model):
-    empresa = models.CharField(max_length=80, null= True, blank =True)
-    serie =models.CharField(max_length=50, null= True, blank= True)
-    numero =models.IntegerField(default=0)
-    descricao =models.CharField(max_length=300)
-    peso =models.DecimalField(max_digits=8,decimal_places=2, null=False, blank=False)
-    cubagem = models.DecimalField(max_digits=8,decimal_places=2)
+    empresa = models.CharField('Empresa:',max_length=80, null= True, blank =True)#Nome da empresa
+    serie =models.CharField('Série:',max_length=50, null= True, blank= True)#Numero de serie
+    numero =models.CharField('Número:',max_length=44, null=True, unique=True)#Numero da NF
+    descricao =models.CharField('Descrição/Nome:',max_length=300)#Nome/descricao do produto
+    peso =models.DecimalField('Peso(Kg):',max_digits=8,decimal_places=2, null=False, blank=False)#Peso em kg
+    cubagem = models.DecimalField('Cubagem(m³):',max_digits=8,decimal_places=2)#Cubagem em m³
 
     class Meta:
         ordering =('empresa',)

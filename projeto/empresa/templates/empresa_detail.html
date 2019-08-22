@@ -6,7 +6,7 @@
 <h1>{{object}}
   <span class="pull-right">
     <a href="{% url 'empresa:empresa_edit' object.pk %}">
-      <button type="button" class="btn btn-success">
+      <button type="button" class="btn btn-primary">
         <span class="fa fa-pencil"></span>Editar
       </button>
     </a>
@@ -17,11 +17,11 @@
   <table class="table table-user-information">
     <tbody>
       <tr>
-        <th class="text-right">Nome da Empresa</th>
+        <th class="text-right">Empresa:</th>
         <td>{{object.nome}}</td>
       </tr>
       <tr>
-        <th class="text-right">CNPJ</th>
+        <th class="text-right">CNPJ: </th>
         <td>{{object.cnpj}}</td>
       </tr>
     </tbody>
