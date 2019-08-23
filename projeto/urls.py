@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from .core import views
 
 urlpatterns = [
     path('', include('projeto.core.urls')),
     path('empresa/', include('projeto.empresa.urls')),
     path('notafiscal/', include('projeto.notafiscal.urls')),
+    path('login/',views.login_user),#Fazer login na pagina
+    path('login/submit',views.submit_login),#Submeter login
     path('admin/', admin.site.urls),
 ]

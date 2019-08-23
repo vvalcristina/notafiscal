@@ -8,6 +8,7 @@ from django.db.models import Q
 def notafiscal_list(request):
     template_name='notafiscal_list.html'
     objects=NotaFiscal.objects.all()
+    #Filtrar as notas fiscais por descricao e por numero
     search= request.GET.get('search')
     if search:
         objects = objects.filter(Q(descricao__icontains=search) | Q(numero__icontains=search))
@@ -29,6 +30,7 @@ def notafiscal_detail(request, pk):
 
 
 def notafiscal_add(request):
+    #Adicionar notas fiscais
     template_name='notafiscal_form.html'
     notafiscal_form=NotaFiscal()
     return render(request, template_name)
