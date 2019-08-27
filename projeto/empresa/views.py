@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.views.generic import CreateView, UpdateView, ListView
 from .models import Empresa
 from .forms import EmpresaForm
@@ -30,6 +31,7 @@ class EmpresaCreate(CreateView):
     model = Empresa
     template_name='empresa_form.html'
     form_class=EmpresaForm
+
 
 class EmpresaUpdate(UpdateView):
     #Editar empresa

@@ -1,12 +1,11 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse_lazy
-
 from projeto.empresa.models import Empresa
 
 #Modelo de cadastro de notas fiscais
 class NotaFiscal(models.Model):
-    empresa = models.CharField('Empresa:',max_length=80, null= True, blank =True)#Nome da empresa
+    empresa =models.ForeignKey(Empresa, on_delete=models.PROTECT, null=True)#Nome da empresa
     serie =models.CharField('Série:',max_length=50, null= True, blank= True)#Numero de serie
     numero =models.CharField('Número:',max_length=44, null=True, unique=True)#Numero da NF
     descricao =models.TextField('Descrição/Nome:')#Nome/descricao do produto
@@ -17,7 +16,7 @@ class NotaFiscal(models.Model):
         ordering =('empresa',)
 
     def __str__(self):
-        return self.empresa
+        return self.descricao
 
     def get_absolute_url(self):
         return reverse_lazy('notafiscal:notafiscal_detail', kwargs={'pk': self.pk})
