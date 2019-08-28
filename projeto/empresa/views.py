@@ -4,6 +4,7 @@ from django.views.generic import CreateView, UpdateView, ListView
 from .models import Empresa
 from .forms import EmpresaForm
 
+
 def empresa_list(request):
     template_name ='empresa_list.html'
     objects = Empresa.objects.all()
@@ -21,6 +22,7 @@ def empresa_detail(request, pk):
     obj = Empresa.objects.get(pk=pk)
     context ={'object' : obj}
     return render(request, template_name,context)
+
 
 def empresa_add(request):
     template_name='empresa_form.html'

@@ -5,11 +5,13 @@
 
 <h1>{{object}}
   <span class="pull-right">
+    {% if user.is_authenticated %}
     <a href="{% url 'empresa:empresa_edit' object.pk %}">
       <button type="button" class="btn btn-primary">
         <span class="fa fa-pencil"></span>Editar
       </button>
     </a>
+    {% endif %}
   </span>
 </h1>
 

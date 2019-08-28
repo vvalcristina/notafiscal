@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    #URLs do projeto
     path('', include('projeto.core.urls')),
     path('empresa/', include('projeto.empresa.urls')),
     path('notafiscal/', include('projeto.notafiscal.urls')),
+    #Interface administrativa
     path('admin/', admin.site.urls),
 ]
