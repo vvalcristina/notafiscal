@@ -1,6 +1,7 @@
-{% extends "base.html" %}
-<!--Bloco de lista de notas fiscais -->
+<!-- Bloco de Notas Fiscais da Empresa -->
 {% block content %}
+<a href="{% url 'empresa:empresa_list' %}">Voltar</a>
+
 <div class="row">
   <div class="col-sm-10" style= "margin-top: 10px;">
     <form action="." method="GET" class="form-inline">
@@ -38,9 +39,7 @@
       <tbody>
         {% for object in object_list %}
           <tr>
-            <td>
-              <a href="{% url 'notafiscal:notafiscal_detail' object.pk %}">{{ object.empresa }}</a>
-            </td>
+            <td>{{ object.empresa }}</td>
             <td>{{ object.numero }}</td>
             <td>{{ object.serie }}</td>
             <td>{{ object.descricao }}</td>

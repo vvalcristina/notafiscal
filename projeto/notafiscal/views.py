@@ -15,6 +15,12 @@ def notafiscal_list(request):
     context ={'object_list': objects}
     return render(request, template_name, context)
 
+def notafiscal_list2(request, empresa):
+     template_name= 'notafiscal_list2.html'
+     obje= NotaFiscal.objects.filter(empresa=empresa)
+     context ={'object_list' : obje}
+     return render(request, template_name,context)
+
 class NotaFiscalList(ListView):
     #Paginação das NotasFiscais
     model = NotaFiscal

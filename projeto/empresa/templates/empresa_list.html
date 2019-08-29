@@ -22,16 +22,14 @@
           <th scope="col">CNPJ</th>
         </tr>
       </thead>
-      <tbody>
-        {% for object in object_list%}
-          <tr>
-            <td>
-              <a href="{% url 'empresa:empresa_detail' object.pk %}">{{object.empresa}}</a>
-            </td>
-            <td>{{object.cnpj}}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
+      {% for object in object_list %}
+        <tr>
+          <th>
+            <a href="{% url 'notafiscal:notafiscal_list2' object.pk %}">{{ object.empresa }}</a>
+            </th>
+          <th>{{ object.cnpj }}</th>
+        </tr>
+      {% endfor %}
     </table>
   {% else %}
      <p class="alert alert-warning">Sem itens na lista.</p>
