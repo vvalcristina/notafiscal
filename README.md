@@ -7,16 +7,18 @@
 * Instale as dependências.
 * Rode as migrações
 
-## Instruções:
-git clone https://github.com/vvalcristina/notafiscal.git
-cd notafiscal
-python -m venv .venv
-source .venv\Scripts\activate
-pip install requirements.txt
-python contrib/env_gen.py
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
+# Instruções:
+
+* git clone https://github.com/vvalcristina/notafiscal.git
+* cd notafiscal
+* python -m venv .venv
+* source .venv\Scripts\activate
+* pip install requirements.txt
+* python contrib/env_gen.py
+* python manage.py makemigrations
+* python manage.py migrate
+* python manage.py createsuperuser
+* python manage.py runserver
 
 ##Projeto:
 Crie um projeto Django para gerenciar notas fiscais.
