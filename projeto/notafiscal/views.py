@@ -5,21 +5,15 @@ from .models import NotaFiscal
 from .forms import NotaFiscalForm
 from django.db.models import Q
 
-def notafiscal_list(request):
+def notafiscal_list(request,empresa):
     template_name='notafiscal_list.html'
-    objects=NotaFiscal.objects.all()
+    objects=NotaFiscal.objects.filter(empresa=empresa)
     #Filtrar as notas fiscais por descricao e por numero
     search= request.GET.get('search')
     if search:
         objects = objects.filter(Q(descricao__icontains=search) | Q(numero__icontains=search))
     context ={'object_list': objects}
     return render(request, template_name, context)
-
-def notafiscal_list2(request, empresa):
-     template_name= 'notafiscal_list2.html'
-     obje= NotaFiscal.objects.filter(empresa=empresa)
-     context ={'object_list' : obje}
-     return render(request, template_name,context)
 
 class NotaFiscalList(ListView):
     #Paginação das NotasFiscais

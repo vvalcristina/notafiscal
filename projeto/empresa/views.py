@@ -18,7 +18,7 @@ class EmpresaList(ListView):
     paginate_by = 5
 
 def notafiscal_list2(request, empresa):
-    template_name ='notafiscal_list2.html'
+    template_name ='notafiscal_list.html'
     obj = Empresa.objects.filter(empresa = empresa)
     context ={'object' : obj}
     return render(request, template_name,context)

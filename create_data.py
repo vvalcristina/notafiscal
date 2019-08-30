@@ -7,7 +7,6 @@ django.setup()
 
 import lorem
 import string
-import timeit
 import random
 from projeto.empresa.models import Empresa
 
@@ -35,19 +34,19 @@ class Num_CNPJ:
 
 class EmpresaClass:
     @staticmethod
-    def criar_empresas(nome):
+    def criar_empresas(empresa):
         Empresa.objects.all().delete()
         aux = []
-        for nome in nomes:
+        for empresa in empresas:
             data = dict(
-                    nome= nome,
+                    empresa= empresa,
                     cnpj= Num_CNPJ.cnpj(0),
             )
             obj = Empresa(**data)
             aux.append(obj)
             Empresa.objects.bulk_create(aux)
 
-nomes= (
+empresas= (
         'Adipisci quisquam sed dolor labore est',
         'Est sit dolorem ut etincidunt sed modi.',
         'Quiquia dolore aliquam sed porro consectetur quaerat sed.',
@@ -59,12 +58,7 @@ nomes= (
         'Numquam aliquam adipisci modi ipsum amet.',
         'Sed ipsum ipsum modi non.',
         'Labore consectetur adipisci quaerat non porro.',
-
 )
-tic = timeit.default_timer()
 
-EmpresaClass.criar_empresas(nomes)
 
-toc = timeit.default_timer()
-
-print('Tempo', toc - tic)
+EmpresaClass.criar_empresas(empresas)

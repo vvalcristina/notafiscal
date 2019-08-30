@@ -8,7 +8,7 @@ app_name = 'empresa'
 urlpatterns = [
     path('', v.EmpresaList.as_view(), name='empresa_list'),
     path('',v.empresa_list, name='empresa_list'),
-    path('<int:empresa>',views.notafiscal_list2, name='notafiscal_list2'),
+    path('<int:empresa>',views.notafiscal_list, name='notafiscal_list'),
     path('add/',v.EmpresaCreate.as_view(), name='empresa_add'),
     path('<int:pk>/edit/',v.EmpresaUpdate.as_view(), name='empresa_edit'),
 
