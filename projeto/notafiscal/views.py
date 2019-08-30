@@ -6,6 +6,7 @@ from .forms import NotaFiscalForm
 from django.db.models import Q
 
 def notafiscal_list(request,empresa):
+    model = NotaFiscal
     template_name='notafiscal_list.html'
     objects=NotaFiscal.objects.filter(empresa=empresa)
     #Filtrar as notas fiscais por descricao e por numero
@@ -13,13 +14,15 @@ def notafiscal_list(request,empresa):
     if search:
         objects = objects.filter(Q(descricao__icontains=search) | Q(numero__icontains=search))
     context ={'object_list': objects}
+    paginate_by = 5
     return render(request, template_name, context)
 
 class NotaFiscalList(ListView):
     #Paginação das NotasFiscais
     model = NotaFiscal
     template_name = 'notafiscal_list.html'
-    paginate_by = 5 #Numero de itens por pagina
+    paginate_by = 10 #Numero de itens por pagina
+    
 
 
 def notafiscal_detail(request, pk):
@@ -32,7 +35,7 @@ def notafiscal_detail(request, pk):
 def notafiscal_add(request):
     #Adicionar notas fiscais
     template_name='notafiscal_form.html'
-    notafiscal_form=NotaFiscal()
+    notafiscal_form=NotaFiscal
     return render(request, template_name)
 
 class NotaFiscalCreate(CreateView):

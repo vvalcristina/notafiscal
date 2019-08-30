@@ -37,28 +37,13 @@ class EmpresaClass:
     def criar_empresas(empresa):
         Empresa.objects.all().delete()
         aux = []
-        for empresa in empresas:
+        for empresa in range(10):
             data = dict(
-                    empresa= empresa,
+                    empresa= lorem.sentence(),
                     cnpj= Num_CNPJ.cnpj(0),
             )
             obj = Empresa(**data)
             aux.append(obj)
             Empresa.objects.bulk_create(aux)
 
-empresas= (
-        'Adipisci quisquam sed dolor labore est',
-        'Est sit dolorem ut etincidunt sed modi.',
-        'Quiquia dolore aliquam sed porro consectetur quaerat sed.',
-        'Quisquam quisquam porro porro dolorem adipisci aliquam.',
-        'Amet aliquam numquam labore aliquam numquam velit.',
-        'Dolore quaerat ut tempora modi sed sed.',
-        'Amet labore est dolore adipisci.',
-        'Dolore numquam amet sed velit tempora quisquam.',
-        'Numquam aliquam adipisci modi ipsum amet.',
-        'Sed ipsum ipsum modi non.',
-        'Labore consectetur adipisci quaerat non porro.',
-)
-
-
-EmpresaClass.criar_empresas(empresas)
+EmpresaClass.criar_empresas(empresa)

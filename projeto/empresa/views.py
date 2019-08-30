@@ -15,7 +15,7 @@ class EmpresaList(ListView):
     #Paginação das Empresas
     model = Empresa
     template_name = 'empresa_list.html'
-    paginate_by = 5
+    paginate_by = 10
 
 def notafiscal_list2(request, empresa):
     template_name ='notafiscal_list.html'
