@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <a href="{% url 'empresa:empresa_list' %}">Voltar</a>
+
+  <h1>{{ object }}
+    <span class="pull-right">
+      {% if user.is_authenticated %}
+      <a href="{% url 'notafiscal:notafiscal_edit' object.pk %}">
+        <button type="button" class="btn btn-primary">
+          <span class="fa fa-pencil"></span>Editar
+        </button>
+      </a>
+      {% endif %}
+    </span>
+  </h1>
+
+  <div class="col-sm-6">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th scope="col">Empresa</th>
+          <td>{{ object.empresa}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Número</th>
+          <td>{{ object.numero}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Série</th>
+          <td>{{ object.serie}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Descrição/Nome</th>
+          <td>{{ object.descricao}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Peso(Kg)</th>
+          <td>{{ object.peso}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Cubagem(m³)</th>
+          <td>{{ object.cubagem}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}

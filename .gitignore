@@ -1,6 +1,15 @@
+#Virtualenv
 env3/*
-db.sqlite3
-src/__pycache__
-projeto/__pycache__
 
+#Banco de Dados
+db.sqlite3
+
+#Cache
+nfe/nfe/__pycache__
+nfe/core/__pycache__
+nfe/notafiscal/__pycache__
+nfe/empresa/__pycache__
+
+#Arquivos ocultos
 .vscode/
+.env/*
