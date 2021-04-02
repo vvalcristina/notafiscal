@@ -1,3 +1,6 @@
 env3/*
 db.sqlite3
 src/__pycache__
+projeto/__pycache__
+
+.vscode/

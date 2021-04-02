@@ -2,7 +2,7 @@
 
 ###  Objetivo
 
-Este projeto tem por objetivo criar uma API em Python para gerenciamento de notas fiscais utilizando o framework [Django](https://docs.djangoproject.com/en/3.1/).
+Este projeto tem por objetivo criar uma API em Python para gerenciamento de notas fiscais utilizando o framework [Django].
 
 **Django**
 Django é um framework para desenvolvimento rápido para web, escrito em Python, que utiliza o padrão model-template-view. 
@@ -43,38 +43,41 @@ Para a apresentação cadastre ao menos 10 empresas com 20 notas fiscais cada um
 
 ### Instruções de uso:
 
-- Faça o fork do repositório e o git clone para sua máquina. Uma vez dentro do projeto crie uma virtualenv e a ative:
+1.  Faça o fork do repositório e o git clone para sua máquina. Uma vez dentro do projeto crie uma virtualenv e a ative:
 
-```
+```bash
     python3 -m venv env3
     source env3/bin/activate
 ```
 
-Uma vez dentro da virtualenv (env3) vamos instalar as bibliotecas necessárias para execução do nosso código:
-```
+2. Uma vez dentro da virtualenv (env3) vamos instalar as bibliotecas necessárias para execução do nosso código:
+
+```bash
     pip3 install -r requirements.txt
 ```
 
-##Links:
+3. Execute o CLI do Django para criar tabelas e o banco de dados automaticamente:
 
-[decouple
-]https://github.com/henriquebastos/python-decouple
+```bash
+    python3 manage.py makemigrations
+    python3 manage.py migrations
+```
 
-[Template Base]
-https://getbootstrap.com/docs/4.0/getting-started/introduction/#starter-template
+4. Crie um super usuário para executar atividades de Django Admin na aplicação:
 
-[Template Nav]
-https://github.com/JTruax/bootstrap-starter-template/blob/master/template/start.html
+```bash
+    python3 manage.py createsuperuser
+```
 
-[Django widget_tweaks]
-https://github.com/jazzband/django-widget-tweaks
+5.  Para startar o servidor execute:
 
-[Class Based Views-> Formato de visualização do projeto ]
-https://docs.djangoproject.com/en/2.2/topics/class-based-views/intro/
-https://ccbv.co.uk/
+```bash
+    python3 manage.py runserver
+```
 
-[Django Bootstrap Form]
-https://django-bootstrap-form.readthedocs.io/en/latest/
+### Estrutura do projeto:
 
-[Paginação]
-https://getbootstrap.com.br/docs/4.1/components/pagination/
+
+
+
+[Django]: https://docs.djangoproject.com/en/3.1/
