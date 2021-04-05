@@ -1,5 +1,4 @@
 from django.db import models
-
 class TimeStampedModels(models.Model):
     created = models.DateTimeField(
         'criado em',

@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 from django.views.generic import CreateView, UpdateView, ListView
 from .models import Empresa
@@ -20,7 +20,6 @@ def notafiscal_list2(request, empresa):
 def empresa_add(request):
     template_name='empresa_form.html'
     return render(request,template_name)
-
 class EmpresaCreate(CreateView):
     model = Empresa
     template_name='empresa_form.html'

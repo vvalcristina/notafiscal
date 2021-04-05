@@ -6,7 +6,6 @@
         {% endif %}
   
         {% for pg in page_obj.paginator.page_range %}
-          <!-- Sempre mostra as 3 primeiras e 3 últimas páginas -->
           {% if pg == 1 or pg == 2 or pg == 3 or pg == page_obj.paginator.num_pages or pg == page_obj.paginator.num_pages|add:'-1' or pg == page_obj.paginator.num_pages|add:'-2' %}
             <li class="page-item"><a class="page-link" href="?page={{ pg }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ pg }}</a></li>
           {% else %}
