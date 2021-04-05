@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load widget_tweaks %}
 
 
 {% block content %}
@@ -17,7 +16,6 @@
           {{ field.label }}
         {% endif %}
       </label>
-        {% render_field field class="form-control" %}
         {% for error in field.errors %}
           <span class="text-muted"{{ error }}></span>
         {% endfor %}

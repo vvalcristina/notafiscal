@@ -6,10 +6,13 @@ db.sqlite3
 
 #Cache
 nfe/nfe/__pycache__
+nfe/core/migrations/*
 nfe/core/__pycache__
 nfe/notafiscal/__pycache__
+nfe/notafiscal/migrations/*
 nfe/empresa/__pycache__
+nfe/empresa/migrations/*
 
 #Arquivos ocultos
 .vscode/
-.env/*
+.env
