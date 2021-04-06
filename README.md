@@ -41,6 +41,7 @@ Para a apresentação cadastre ao menos 10 empresas com 20 notas fiscais cada um
 - [x] Inclua um CSS à página para uma aparencia agradável (pode ser Bootstrap)
 - [x] A listagem de notas fiscais deve ser feita em uma tabela (HTML)
 
+Para popular o banco de dados da aplicação utilizamos a biblioteca [Faker]. Os scripts de geração das empresas se encontram no diretório scripts.
 ### Instruções de uso:
 
 1.  Faça o fork do repositório e o git clone para sua máquina. Uma vez dentro do projeto crie uma virtualenv e a ative:
@@ -81,3 +82,4 @@ Para a apresentação cadastre ao menos 10 empresas com 20 notas fiscais cada um
 
 
 [Django]: https://docs.djangoproject.com/en/3.1/
+[Faker]: https://faker.readthedocs.io/en/master/index.html#
