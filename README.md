@@ -23,23 +23,23 @@ Esta API tem o objetivo de prover o gerenciamento de notas fiscais de uma empres
 
 **Tarefas**
 
-- [ ] O cadastro das notas fiscais deve ser feito via Django Admin, assim como o cadastro de empresa. As únicas informações necessárias à empresa são: 
-- Nome
-- CNPJ.
+- [x] O cadastro das notas fiscais deve ser feito via Django Admin, assim como o cadastro de empresa. As únicas informações necessárias à empresa são: 
+  - Nome
+  - CNPJ
 
-- [ ] Crie uma página para exibir a listagem de empresas. Ao abrir os detalhes da empresa deve ser aberta a listagem de notas fiscais daquela empresa.
+- [x] Crie uma página para exibir a listagem de empresas. Ao abrir os detalhes da empresa deve ser aberta a listagem de notas fiscais daquela empresa.
 
-- [ ] Adicione à listagem de notas fiscais um campo de busca por número ou nome do produto. A busca deve funcionar via GET.
+- [x] Adicione à listagem de notas fiscais um campo de busca por número ou nome do produto. A busca deve funcionar via GET.
 
-- [ ] Paginação é bem vinda, mas não necessária para o teste.
+- [x] Paginação é bem vinda, mas não necessária para o teste.
 Você pode usar qualquer formato de Django views para este teste (CBV ou FBV)
 
 Para a apresentação cadastre ao menos 10 empresas com 20 notas fiscais cada uma. O nome de cada empresa pode ser gerado com um lorem ipsum e os dados das notas fiscais podem ser randomicos, porém válidos.
 
-- [ ] Inclua o script de geração das empresas no anexo do projeto
-- [ ] Utilize arquivos externos para os dados de entrada
-- [ ] Inclua um CSS à página para uma aparencia agradável (pode ser Bootstrap)
-- [ ] A listagem de notas fiscais deve ser feita em uma tabela (HTML)
+- [x] Inclua o script de geração das empresas no anexo do projeto
+- [x] Utilize arquivos externos para os dados de entrada
+- [x] Inclua um CSS à página para uma aparencia agradável (pode ser Bootstrap)
+- [x] A listagem de notas fiscais deve ser feita em uma tabela (HTML)
 
 ### Instruções de uso:
 
@@ -58,12 +58,16 @@ Para a apresentação cadastre ao menos 10 empresas com 20 notas fiscais cada um
 
 3. Execute o CLI do Django para criar tabelas e o banco de dados automaticamente:
 
+* makemigrations: Verifica as alterações das tabelas dos bancos de dados da aplicação.
+* migrations: Aplica as mudanças na API.
+  
 ```bash
+    cd notafiscal/nfe/
     python3 manage.py makemigrations
     python3 manage.py migrations
 ```
 
-4. Crie um super usuário para executar atividades de Django Admin na aplicação:
+1. Crie um super usuário para executar atividades de Django Admin na aplicação:
 
 ```bash
     python3 manage.py createsuperuser
