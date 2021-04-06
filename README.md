@@ -79,9 +79,5 @@ Para a apresentação cadastre ao menos 10 empresas com 20 notas fiscais cada um
     python3 manage.py runserver
 ```
 
-### Estrutura do projeto:
-
-
-
 
 [Django]: https://docs.djangoproject.com/en/3.1/
